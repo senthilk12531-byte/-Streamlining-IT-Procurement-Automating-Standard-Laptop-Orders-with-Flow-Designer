@@ -1,0 +1,13 @@
+Subject: Standard Laptop Order - Team Enrollment Confirmed
+
+Hello ${requested_for},
+
+Your standard laptop order has been received and the team enrollment requirement has been confirmed.
+
+Request: ${number}
+Status: ${state}
+
+The request has been routed through the standard IT procurement workflow.
+
+Thank you,
+IT Procurement Team

@@ -1,0 +1,38 @@
+{
+  "name": "Standard Laptop Order Automation",
+  "table": "sc_req_item",
+  "trigger": {
+    "type": "record_created",
+    "condition": "catalog_item == 'Standard Laptop'"
+  },
+  "steps": [
+    {
+      "name": "Get Requester Details",
+      "type": "look_up_record"
+    },
+    {
+      "name": "Validate Team Enrollment",
+      "type": "if",
+      "condition": "team_enrolled == true"
+    },
+    {
+      "name": "Request Approval",
+      "type": "ask_for_approval",
+      "approver": "manager"
+    },
+    {
+      "name": "Update Request",
+      "type": "update_record",
+      "state": "Approval Requested"
+    },
+    {
+      "name": "Send Confirmation",
+      "type": "send_notification"
+    },
+    {
+      "name": "Manual Review",
+      "type": "update_record",
+      "state": "Manual Review"
+    }
+  ]
+}
